@@ -7,7 +7,7 @@ from pyzabbix import ZabbixAPI
 import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-ZABBIX_SERVER='https://zabbix.com/zabbix/api_jsonrpc.php'
+ZABBIX_SERVER='https://zabbix.com/api'
 zapi = ZabbixAPI(ZABBIX_SERVER)
 zapi.session.verify = False
 zapi.login('username','password')
