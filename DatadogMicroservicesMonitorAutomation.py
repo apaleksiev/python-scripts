@@ -15,7 +15,7 @@ for service in services:
         name=f"[{new_dc}] Success rate for {service} is {{{{value}}}}",
         type=MonitorType.QUERY_ALERT,
         query=f"avg(last_1h):100 * ( cumsum(sum:aws.applicationelb.request_count{{environment:{new_dc},service:{service}}} by {{version}}) - cumsum(sum:aws.applicationelb.httpcode_target_5xx{{environment:{new_dc},service:{service}}} by {{version}}) ) / cumsum(sum:aws.applicationelb.request_count{{environment:{new_dc},service:{service}}} by {{version}}) < 99",
-        message=f"aws.applicationelb.httpcode_target_5xx is reporting high error rate for led in {new_dc}. Success rate SLA is {{{{warn_threshold}}}}\n\nPlease use monitoring and configuration tools to address the root cause and minimize customer impact.\n\nDon't hesitate to contact SRE team if you have any questions {{{{#is_alert}}}} @devops@yourorg.com {{{{/is_alert}}}}",
+        message=f"aws.applicationelb.httpcode_target_5xx is reporting high error rate for {service} in {new_dc}. Success rate SLA is {{{{warn_threshold}}}}\n\nPlease use monitoring and configuration tools to address the root cause and minimize customer impact.\n\nDon't hesitate to contact SRE team if you have any questions {{{{#is_alert}}}} @devops@yourorg.com {{{{/is_alert}}}}",
         tags=[
             f"env:{new_dc}",
             f"service:{service}",
