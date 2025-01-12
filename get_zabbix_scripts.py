@@ -29,8 +29,6 @@ items_and_hosts = []
 for i in hostnames:
     host_id = i['hostid']
     items = zapi.item.get(output=["name", "key_", "delay"], hostids=host_id)
-#    filtered_items = [item for item in items if all(exclude not in item["key_"] for exclude in exclude_strings)]
-#    filtered_items = [item for item in items if not item["key_"].startswith("external") and all(exclude not in item["key_"] for exclude in exclude_strings)]
 
     filtered_items = [item for item in items if
                      not item["key_"].startswith("external") and
