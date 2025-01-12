@@ -79,7 +79,7 @@ for i in monitors:
         r = requests.post(MONITORS_URL, json=data, headers=headers)
         print(r.status_code)
 
-    if i == "Microservice2":
+    if i == "Microservice3":
         data = {
             "display_name": f"{new_dc} Microservice3",
             "type": "URL",
@@ -104,5 +104,4 @@ for i in monitors:
             ]
         }
         r = requests.post(MONITORS_URL, json=data, headers=headers)
-#        pprint.pprint(json.loads(r.content))
         print(r.status_code) 
