@@ -25,7 +25,7 @@ headers = {
 }
 
 for i in monitors:
-    if i == "Microservice1":
+    if i == "microservice1":
         data = {
             "display_name": f"{new_dc} Microservice1",
             "type": "URL",
@@ -52,7 +52,7 @@ for i in monitors:
         r = requests.post(MONITORS_URL, json=data, headers=headers)
         print(r.status_code)
 
-    if i == "Microservice2":
+    if i == "microservice2":
         data = {
             "display_name": f"{new_dc} Microservice2",
             "type": "URL",
@@ -79,7 +79,7 @@ for i in monitors:
         r = requests.post(MONITORS_URL, json=data, headers=headers)
         print(r.status_code)
 
-    if i == "Microservice3":
+    if i == "microservice3":
         data = {
             "display_name": f"{new_dc} Microservice3",
             "type": "URL",
