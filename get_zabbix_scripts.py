@@ -1,3 +1,6 @@
+#Script was written in order to get scripts that were presented in Zabbix as "items"
+#we had accumulated hundreds over the years and we needed to know how many were there, what their purpose was, and if they were even in use anymore and could be removed
+
 from pyzabbix import ZabbixAPI
 import json
 
